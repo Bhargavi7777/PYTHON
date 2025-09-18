@@ -1,0 +1,15 @@
+def gcd(a, b):
+    while b != 0:
+        rem=a%b
+        a=b
+        b=rem
+    return a
+
+def cop(x, y):
+    return gcd(x, y) == 1
+a = int(input("Enter any number: "))
+for i in range(5, a):
+    for j in range(4, i):
+        for k in range(3, j):
+            if i * i == j * j + k * k and cop(i, j) and cop(j, k) and cop(i, k):
+                print(k, j, i)
